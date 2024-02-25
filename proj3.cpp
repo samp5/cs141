@@ -526,7 +526,6 @@ void executeCmd(char action, int row, int col) {
       setCell(row, col, UNKNOWN);
       num_incorrect_flagged_mine -= 1;
     }
-  default:
-    return;
+    break;
   }
 }
