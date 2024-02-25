@@ -503,6 +503,11 @@ void executeCmd(char action, int row, int col) {
       setCell(row, col, INCORRECT_FLAGGED_MINE);
       num_incorrect_flagged_mine += 1;
     }
+    if (num_incorrect_flagged_mine + num_correct_flagged_mine == num_mine) {
+      if (num_incorrect_flagged_mine) {
+        explode = true;
+      }
+    }
     break;
 
   case 'r':
@@ -517,11 +522,10 @@ void executeCmd(char action, int row, int col) {
     if (cell_value == FLAGGED_MINE) {
       setCell(row, col, UNKNOWN);
       num_correct_flagged_mine -= 1;
-    } else if (cell_value == UNFLAGGED_MINE) {
+    } else if (cell_value == INCORRECT_FLAGGED_MINE) {
       setCell(row, col, UNKNOWN);
       num_incorrect_flagged_mine -= 1;
     }
-
   default:
     return;
   }
