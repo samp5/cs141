@@ -520,7 +520,7 @@ void executeCmd(char action, int row, int col) {
 
   case 'u':
     if (cell_value == FLAGGED_MINE) {
-      setCell(row, col, UNKNOWN);
+      setCell(row, col, UNFLAGGED_MINE);
       num_correct_flagged_mine -= 1;
     } else if (cell_value == INCORRECT_FLAGGED_MINE) {
       setCell(row, col, UNKNOWN);
