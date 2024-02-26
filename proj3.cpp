@@ -6,6 +6,7 @@
 -------------------------------------------*/
 
 #include <iostream>
+#include <type_traits>
 
 using namespace std;
 
@@ -14,8 +15,8 @@ using namespace std;
 #define SEED_VALUE 0
 #endif
 
-const int width = 5;
-const int height = 8;
+const int width = 20;
+const int height = 20;
 
 const int UNFLAGGED_MINE = -1; // The cell is mine that has not been flagged yet
 const int FLAGGED_MINE = -2;   // The cell has been correctly flagged as a mine
